@@ -1,5 +1,6 @@
 // Home.js
 import React from 'react';
+import '../styles.css';  // Importing the styles
 
 function Home() {
   return (
