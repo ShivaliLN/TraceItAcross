@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import QRCode from 'qrcode.react';  // Importing the QRCode component
 import '../styles.css';  // Importing the styles
+import { getProduct } from './ethersInteractions';
 
 function ProductHistory() {
   const [searchQuery, setSearchQuery] = useState('');
@@ -12,11 +13,10 @@ function ProductHistory() {
     setSearchQuery(e.target.value);
   };
 
-  const handleSearchSubmit = (e) => {
+  const handleSearchSubmit = async (e) => {
     e.preventDefault();
-    // Fetch and display the product information based on the search query
-    // For the demo, we'll set the QR code value based on the search query
-    setQrValue('https://trackitacross.com/product/' + searchQuery);
+    const product = await getProduct(searchQuery);
+    setQrValue('https://red-spatial-angelfish-279.mypinata.cloud/ipfs/' + product.id);  // Assuming 'id' is a field in the returned product object
   };
 
   const handleQrScanDemo = () => {

@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles.css';  // Importing the styles
+import { createProduct } from './ethersInteractions';
 
 function RegisterProduct() {
   const [formData, setFormData] = useState({
@@ -29,9 +30,9 @@ function RegisterProduct() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Submit form data to the smart contract or backend server
+    await createProduct(formData);
   };
 
   return (
