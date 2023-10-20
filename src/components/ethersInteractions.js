@@ -8,10 +8,8 @@ const JSONRPC_SCROLL="https://sepolia-rpc.scroll.io/"
 const JSONRPC_FVM="https://api.calibration.node.glif.io/rpc/v1"
 const jsonRPC =JSONRPC_SCROLL
 
-
-const contractABI = [
-  // your contract ABI
-];
+const contractJSON = require('./TrackItAcross.json');
+const contractABI = contractJSON.abi;
 
 const provider = new JsonRpcProvider(jsonRPC);
 const contract = new Contract(contractAddress, contractABI, provider);

@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles.css';  // Importing the styles
 import { createProduct } from './ethersInteractions';
+import { Web3Storage } from 'web3.storage';
 
 function RegisterProduct() {
   const [formData, setFormData] = useState({
@@ -32,7 +33,20 @@ function RegisterProduct() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await createProduct(formData);
+    const metadata = {
+      name: formData.name,
+      description: formData.description,
+      image: "ipfs://" + formData.imageUrl,
+      attributes: [
+        { trait_type: "Batch Number", value: formData.batchNumber },
+        { trait_type: "Production Date", value: formData.productionDate },
+        { trait_type: "Geographical Origin", value: formData.origin },
+      ]
+    };
+    const client = new Web3Storage({ token: process.env.REACT_APP_WEB3_STORAGE });
+    const cid = await client.store(JSON.stringify(metadata));
+    const uri = 'https://ipfs.io/ipfs/' + cid;
+    await createProduct(uri);
   };
 
   return (
@@ -52,7 +66,7 @@ function RegisterProduct() {
         <input type="date" name="productionDate" onChange={handleInputChange} />
         <input type="text" name="origin" placeholder="Geographical Origin" onChange={handleInputChange} />
         <input type="text" name="description" placeholder="Product Description" onChange={handleInputChange} />
-        <input type="text" name="imageUrl" placeholder="Image URL" onChange={handleInputChange} />
+        <input type="text" name="imageUrl" placeholder="Image URI" onChange={handleInputChange} />
         <input type="file" name="verificationDoc" onChange={handleFileChange} />
         <button type="submit">Register Product</button>
       </form>
