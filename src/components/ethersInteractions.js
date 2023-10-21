@@ -1,9 +1,11 @@
 import { ethers } from 'ethers';
 
 const SCROLL_SEPOLIA_CONTRACT = "0x4f9f01E346d67E982bBBA24f482B622E9fa2F738"; // Test contract - "0x2DB23AeB020bd7755c4480Cb2d3c687e7548A506"; //"0xAFf7DB634b6903Ae9870deb5DED1058E75aA3219";
+const FILECOIN_CALIBRATION_CONTRACT ="0xb0Cd8839E7F6E749D349a5fBe5eAd7FF8711F8d8"  // Filecoin Calibration Testnet
 const JSONRPC_SCROLL = "https://sepolia-rpc.scroll.io/";
 const contractJSON = require('./TrackItAcross.json');
 const contractABI = contractJSON.abi;
+const TESTNET_CONTRACT = SCROLL_SEPOLIA_CONTRACT;
 
 let provider;
 let contract;
@@ -14,7 +16,7 @@ async function initEthers() {
       // Request account access
       await window.ethereum.request({ method: 'eth_requestAccounts' });
       provider = new ethers.providers.Web3Provider(window.ethereum);  // Updated line
-      contract = new ethers.Contract(SCROLL_SEPOLIA_CONTRACT, contractABI, provider.getSigner());  // Updated line
+      contract = new ethers.Contract(TESTNET_CONTRACT, contractABI, provider.getSigner());  // Updated line
     } catch (error) {
       console.error("User denied account access:", error);
     }

@@ -14,7 +14,7 @@ contract TrackItAcross is ERC1155, Ownable {
         bool isVerified;
     }
 
-    constructor(address initialOwner) ERC1155("https://ipfs.io/ipfs/{id}") Ownable(initialOwner) {
+    constructor(address initialOwner) ERC1155("https://ipfs.io/ipfs/{id}/metadata.json") Ownable(initialOwner) {
         admin = initialOwner;
     }
 
@@ -28,5 +28,11 @@ contract TrackItAcross is ERC1155, Ownable {
         Product memory product = products[productId];
         require(bytes(product.uri).length > 0, "Product does not exist");
         return product;
+    }
+
+    function verifyProduct(uint productId) external {
+        Product storage product = products[productId];
+        require(bytes(product.uri).length > 0, "Product does not exist");
+        product.isVerified = true;
     }
 }
