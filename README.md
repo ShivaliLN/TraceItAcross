@@ -1,10 +1,10 @@
-<img src="./logo.png" alt="TrackItAcross Logo" width="200"/>
+<img src="./logo.png" alt="TraceItAcross Logo" width="200"/>
 
-# TrackItAcross
+# TraceItAcross
 
 ## Overview
 
-_TrackItAcross_ is an innovative platform designed to track products using blockchain technology. By utilizing NFTs (Non-Fungible Tokens), businesses can create unique digital representations of their products, allowing consumers to trace the authenticity and origins of the items they purchase. The platform offers a seamless interface for consumers to scan a QR code on the product, which retrieves and displays all relevant information about the product from the blockchain.
+_TraceItAcross_ is an innovative platform designed to track products using blockchain technology. By utilizing NFTs (Non-Fungible Tokens), businesses can create unique digital representations of their products, allowing consumers to trace the authenticity and origins of the items they purchase. The platform offers a seamless interface for consumers to scan a QR code on the product, which retrieves and displays all relevant information about the product from the blockchain.
 
 ## Features
 
@@ -20,7 +20,7 @@ _TrackItAcross_ is an innovative platform designed to track products using block
 - **React.js**: Powers the frontend, enabling a dynamic and interactive user interface.
 
 ### Blockchain:
-- **Solidity**: Smart contract programming language used for creating the TrackItAcross contract on the Ethereum blockchain.
+- **Solidity**: Smart contract programming language used for creating the TraceItAcross contract on the Ethereum blockchain.
 - **Scroll Sepolia**: The smart contract is deployed on the Scroll Sepolia testnet for lower transaction costs and efficient scalability.
 
 ### Libraries and Tools:
@@ -30,7 +30,7 @@ _TrackItAcross_ is an innovative platform designed to track products using block
 
 ## Smart Contract
 
-The TrackItAcross smart contract is deployed on the Scroll Sepolia testnet. It is responsible for the creation and retrieval of product NFTs. Businesses can create product NFTs by providing a metadata URI, and consumers can retrieve product information using the product ID.
+The TraceItAcross smart contract is deployed on the Scroll Sepolia testnet. It is responsible for the creation and retrieval of product NFTs. Businesses can create product NFTs by providing a metadata URI, and consumers can retrieve product information using the product ID.
 
 - **Smart Contract Address on Scroll Sepolia Testnet**: [0x2DB23AeB020bd7755c4480Cb2d3c687e7548A506](https://sepolia-blockscout.scroll.io/address/0x2DB23AeB020bd7755c4480Cb2d3c687e7548A506#code)
 
@@ -39,7 +39,7 @@ The TrackItAcross smart contract is deployed on the Scroll Sepolia testnet. It i
 1. Clone the repository to your local machine.
 2. Install the necessary dependencies using `npm install`.
 3. Start the local development server using `npm start`.
-4. Open your web browser and navigate to `http://localhost:3000` to access the TrackItAcross platform.
+4. Open your web browser and navigate to `http://localhost:3000` to access the TraceItAcross platform.
 5. Use the platform to register new products or look up existing products using the QR code scanner or manual Product ID entry.
 
 ## Future Enhancements
