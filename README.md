@@ -1,70 +1,49 @@
-# Getting Started with Create React App
+<img src="./logo.png" alt="TrackItAcross Logo" width="200"/>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# TrackItAcross
 
-## Available Scripts
+## Overview
 
-In the project directory, you can run:
+_TrackItAcross_ is an innovative platform designed to track products using blockchain technology. By utilizing NFTs (Non-Fungible Tokens), businesses can create unique digital representations of their products, allowing consumers to trace the authenticity and origins of the items they purchase. The platform offers a seamless interface for consumers to scan a QR code on the product, which retrieves and displays all relevant information about the product from the blockchain.
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. **Product Registration**: Businesses can register their products on the blockchain by creating NFTs.
+2. **Product Lookup**: Consumers can easily look up product information by scanning a QR code or entering the Product ID.
+3. **QR Code Scanner**: A built-in QR code scanner for easy product lookups.
+4. **Blockchain-powered**: Utilizing Ethereum blockchain to store product information securely and transparently.
+5. **Responsive UI**: A user-friendly interface for both businesses and consumers.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Tech Stack
 
-### `npm test`
+### Frontend:
+- **React.js**: Powers the frontend, enabling a dynamic and interactive user interface.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Blockchain:
+- **Solidity**: Smart contract programming language used for creating the TrackItAcross contract on the Ethereum blockchain.
+- **Scroll Sepolia**: The smart contract is deployed on the Scroll Sepolia testnet for lower transaction costs and efficient scalability.
 
-### `npm run build`
+### Libraries and Tools:
+- **jsQR**: A pure JavaScript library for QR code decoding.
+- **IPFS/Web3.Storage**: InterPlanetary File System for decentralized storage of product metadata.
+- **ethers.js**: A library for interacting with the Ethereum blockchain.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Smart Contract
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The TrackItAcross smart contract is deployed on the Scroll Sepolia testnet. It is responsible for the creation and retrieval of product NFTs. Businesses can create product NFTs by providing a metadata URI, and consumers can retrieve product information using the product ID.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Smart Contract Address on Scroll Sepolia Testnet**: [0x2DB23AeB020bd7755c4480Cb2d3c687e7548A506](https://sepolia-blockscout.scroll.io/address/0x2DB23AeB020bd7755c4480Cb2d3c687e7548A506#code)
 
-### `npm run eject`
+## Getting Started
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. Clone the repository to your local machine.
+2. Install the necessary dependencies using `npm install`.
+3. Start the local development server using `npm start`.
+4. Open your web browser and navigate to `http://localhost:3000` to access the TrackItAcross platform.
+5. Use the platform to register new products or look up existing products using the QR code scanner or manual Product ID entry.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Future Enhancements
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. **Mobile Compatibility**: Enhance the QR code scanner functionality for mobile devices.
+2. **Enhanced Product Metadata**: Allow for more detailed product metadata, including images, videos, and other multimedia.
+3. **Blockchain Upgrades**: Explore deployment on other blockchain networks for improved scalability and lower transaction costs.
