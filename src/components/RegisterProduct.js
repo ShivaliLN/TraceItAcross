@@ -59,6 +59,7 @@ function RegisterProduct() {
         <nav>
           <ul>
             <li><Link to="/">Home</Link></li>
+            <li><Link to="/verify">Verify Product</Link></li>
             <li><Link to="/history">Product History</Link></li>
           </ul>
         </nav>

@@ -9,10 +9,11 @@ _TraceItAcross_ is an innovative platform designed to track products using block
 ## Features
 
 1. **Product Registration**: Businesses can register their products on the blockchain by creating NFTs.
-2. **Product Lookup**: Consumers can easily look up product information by scanning a QR code or entering the Product ID.
-3. **QR Code Scanner**: A built-in QR code scanner for easy product lookups.
-4. **Blockchain-powered**: Utilizing Ethereum blockchain to store product information securely and transparently.
-5. **Responsive UI**: A user-friendly interface for both businesses and consumers.
+2. **Product Verification**: Authorized entities can manually verify products using a dedicated interface within the application. Users upload verification documents against a specific Product ID, which are then saved on web3.storage. Upon successful document upload, the smart contract is updated to reflect the product's verification status on the blockchain, ensuring a trustworthy verification process.
+3. **Product Lookup**: Consumers can easily look up product information by scanning a QR code or entering the Product ID.
+4. **QR Code Scanner**: A built-in QR code scanner for easy product lookups.
+5. **Blockchain-powered**: Utilizing Ethereum blockchain to store product information securely and transparently.
+6. **Responsive UI**: A user-friendly interface for both businesses and consumers.
 
 ## Tech Stack
 

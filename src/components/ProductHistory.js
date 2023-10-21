@@ -30,6 +30,7 @@ function ProductHistory() {
                     <ul>
                         <li><Link to="/">Home</Link></li>
                         <li><Link to="/register">Register Product</Link></li>
+                        <li><Link to="/verify">Verify Product</Link></li>
                     </ul>
                 </nav>
             </header>

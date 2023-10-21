@@ -5,6 +5,8 @@ import Home from './components/Home';
 import RegisterProduct from './components/RegisterProduct';
 import ProductHistory from './components/ProductHistory';
 import './styles.css';  // Importing the styles
+import VerifyProduct from './components/VerifyProduct';  // Import the new VerifyProduct component
+
 
 function App() {
   return (
@@ -14,6 +16,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/register" element={<RegisterProduct />} />
           <Route path="/history" element={<ProductHistory />} />
+          <Route path="/verify" element={<VerifyProduct />} />  {/* New VerifyProduct Route */}
         </Routes>
       </div>
     </Router>
