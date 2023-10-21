@@ -1,4 +1,4 @@
-<img src="./logo.png" alt="TraceItAcross Logo" width="200"/>
+<img src="Logo.png" alt="TraceItAcross Logo" width="200"/>
 
 # TraceItAcross
 
