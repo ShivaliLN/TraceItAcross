@@ -23,6 +23,7 @@ _TraceItAcross_ is an innovative platform designed to track products using block
 ### Blockchain:
 - **Solidity**: Smart contract programming language used for creating the TraceItAcross contract on the Ethereum blockchain.
 - **Scroll Sepolia**: The smart contract is deployed on the Scroll Sepolia testnet for lower transaction costs and efficient scalability.
+- **FVM Filecoin Calibration**:Deploying on Filecoin Virtual Machine (FVM) facilitates a more secure and decentralized storage solution for the NFT metadata in our project, ensuring enhanced data integrity and accessibility while promoting a transparent and trustworthy supply chain ecosystem.
 
 ### Libraries and Tools:
 - **jsQR**: A pure JavaScript library for QR code decoding.
@@ -34,6 +35,8 @@ _TraceItAcross_ is an innovative platform designed to track products using block
 The TraceItAcross smart contract is deployed on the Scroll Sepolia testnet. It is responsible for the creation and retrieval of product NFTs. Businesses can create product NFTs by providing a metadata URI, and consumers can retrieve product information using the product ID.
 
 - **Smart Contract Address on Scroll Sepolia Testnet**: [0x2DB23AeB020bd7755c4480Cb2d3c687e7548A506](https://sepolia-blockscout.scroll.io/address/0x2DB23AeB020bd7755c4480Cb2d3c687e7548A506#code)
+- **Smart Contract Address on Filecoin Calibration Testnet**: [0xb0Cd8839E7F6E749D349a5fBe5eAd7FF8711F8d8](https://calibration.filfox.info/en/address/0xb0Cd8839E7F6E749D349a5fBe5eAd7FF8711F8d8)
+
 
 ## Getting Started
 
