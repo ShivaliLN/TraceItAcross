@@ -1,4 +1,3 @@
-// RegisterProduct.js
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles.css';  // Importing the styles
@@ -13,7 +12,6 @@ function RegisterProduct() {
     origin: '',
     description: '',
     imageUrl: '',
-    verificationDoc: null,
   });
 
   const handleInputChange = (e) => {
@@ -24,28 +22,24 @@ function RegisterProduct() {
     });
   };
 
-  const handleFileChange = (e) => {
-    setFormData({
-      ...formData,
-      verificationDoc: e.target.files[0],
-    });
-  };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     const metadata = {
       name: formData.name,
       description: formData.description,
-      image: "ipfs://" + formData.imageUrl,
+      image: formData.imageUrl,
       attributes: [
         { trait_type: "Batch Number", value: formData.batchNumber },
         { trait_type: "Production Date", value: formData.productionDate },
         { trait_type: "Geographical Origin", value: formData.origin },
+        // ... other attributes
       ]
     };
-    const client = new Web3Storage({ token: process.env.REACT_APP_WEB3_STORAGE });
-    const cid = await client.store(JSON.stringify(metadata));
-    const uri = 'https://ipfs.io/ipfs/' + cid;
+    const client = new Web3Storage({ token: "" }); //process.env.REACT_APP_WEB3_STORAGE
+    const metadataBlob = new Blob([JSON.stringify(metadata)], { type: 'application/json' });
+    const metadataFile = new File([metadataBlob], "metadata.json", { type: 'application/json' });
+    const { cid } = await client.put([metadataFile]);
+    const uri = `https://ipfs.io/ipfs/${cid}/metadata.json`;
     await createProduct(uri);
   };
 
@@ -67,7 +61,6 @@ function RegisterProduct() {
         <input type="text" name="origin" placeholder="Geographical Origin" onChange={handleInputChange} />
         <input type="text" name="description" placeholder="Product Description" onChange={handleInputChange} />
         <input type="text" name="imageUrl" placeholder="Image URI" onChange={handleInputChange} />
-        <input type="file" name="verificationDoc" onChange={handleFileChange} />
         <button type="submit">Register Product</button>
       </form>
     </div>
