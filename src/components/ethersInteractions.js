@@ -1,6 +1,6 @@
 import { ethers } from 'ethers';
 
-const SCROLL_SEPOLIA_CONTRACT = "0xAFf7DB634b6903Ae9870deb5DED1058E75aA3219";
+const SCROLL_SEPOLIA_CONTRACT = "0x2DB23AeB020bd7755c4480Cb2d3c687e7548A506"; //"0xAFf7DB634b6903Ae9870deb5DED1058E75aA3219";
 const JSONRPC_SCROLL = "https://sepolia-rpc.scroll.io/";
 const contractJSON = require('./TrackItAcross.json');
 const contractABI = contractJSON.abi;
@@ -13,8 +13,8 @@ async function initEthers() {
     try {
       // Request account access
       await window.ethereum.request({ method: 'eth_requestAccounts' });
-      provider = new ethers.Web3Provider(window.ethereum);
-      contract = new ethers.Contract(SCROLL_SEPOLIA_CONTRACT, contractABI, provider);
+      provider = new ethers.providers.Web3Provider(window.ethereum);  // Updated line
+      contract = new ethers.Contract(SCROLL_SEPOLIA_CONTRACT, contractABI, provider.getSigner());  // Updated line
     } catch (error) {
       console.error("User denied account access:", error);
     }
@@ -27,6 +27,8 @@ async function initEthers() {
 initEthers();
 
 export const createProduct = async (uri) => {
+  console.log('URI in createProduct:', uri);  // Log the URI to check its value
+  
   if (provider && contract) {
     const signer = provider.getSigner();
     const contractWithSigner = contract.connect(signer);

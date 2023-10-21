@@ -38,9 +38,18 @@ function RegisterProduct() {
     const client = new Web3Storage({ token: "" }); //process.env.REACT_APP_WEB3_STORAGE
     const metadataBlob = new Blob([JSON.stringify(metadata)], { type: 'application/json' });
     const metadataFile = new File([metadataBlob], "metadata.json", { type: 'application/json' });
-    const { cid } = await client.put([metadataFile]);
-    const uri = `https://ipfs.io/ipfs/${cid}/metadata.json`;
-    await createProduct(uri);
+    try {
+      const cid = await client.put([metadataFile]);  // Assign response directly to cid
+      console.log('CID:', cid);  // Log the CID to check its value
+      if (cid) {
+        const uri = `https://ipfs.io/ipfs/${cid}/metadata.json`;
+        await createProduct(uri);
+      } else {
+        console.error('CID is undefined');
+      }
+    } catch (error) {
+      console.error('Error uploading file:', error);
+    }
   };
 
   return (
