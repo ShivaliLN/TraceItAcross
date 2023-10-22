@@ -7,7 +7,12 @@ module.exports = {
     scrollSepolia: {
       url: "https://sepolia-rpc.scroll.io/" || "",
       accounts:
-      ["PK"],
+      [PRIVATE_KEY],
+    },
+    calibrationnet: {
+        chainId: 314159,
+        url: "https://api.calibration.node.glif.io/rpc/v1",
+        accounts: [PRIVATE_KEY],
     }
   },
   etherscan: {
