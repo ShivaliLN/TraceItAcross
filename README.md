@@ -37,6 +37,7 @@ The TraceItAcross smart contract is deployed on the Scroll Sepolia testnet & Fil
 - **Smart Contract Address on Scroll Sepolia Testnet**: [0x4f9f01E346d67E982bBBA24f482B622E9fa2F738](https://sepolia-blockscout.scroll.io/address/0x4f9f01E346d67E982bBBA24f482B622E9fa2F738#code)
 - **Smart Contract Address on Filecoin Calibration Testnet**: [0xb0Cd8839E7F6E749D349a5fBe5eAd7FF8711F8d8](https://calibration.filfox.info/en/address/0xb0Cd8839E7F6E749D349a5fBe5eAd7FF8711F8d8)
 
+** Note to Judges** - Due to hardhat error, was unable to verify contracts. I even tried with Remix Plugins (CONTRACT VERIFICATION - SOURCIFY, & Etherscan) but Scroll Sepolia Testnet was not listed and FVM Calibration Testnet, it did say that contract verified but didn't show the same on the scan. 
 
 ## Getting Started
 
