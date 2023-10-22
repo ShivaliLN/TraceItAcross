@@ -6,7 +6,7 @@ async function main() {
   const addr0 = await signer0.getAddress();
 
   const TrackItAcross = await hre.ethers.getContractFactory("TrackItAcross")
-  const trackItAcross = await TrackItAcross.deploy()
+  const trackItAcross = await TrackItAcross.deploy(0x6C432ee27C48b00fe6957E7C6a3d03F7edd0A37a)
   await trackItAcross.deployed()
   console.log("TrackItAcross Contract: " + trackItAcross.address)
 

@@ -7,23 +7,8 @@ module.exports = {
     scrollSepolia: {
       url: "https://sepolia-rpc.scroll.io/" || "",
       accounts:
-        process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
-    },
-    arbitrumGoerli: {
-      url: 'https://goerli-rollup.arbitrum.io/rpc',
-      chainId: 421613,
-      accounts: process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
-    },
-    arbitrumStylus: {
-      url: 'https://stylus-testnet.arbitrum.io/rpc',
-      chainId: 23011913,
-      accounts: process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
-    },
-        calibrationnet: {
-            chainId: 314159,
-            url: "https://api.calibration.node.glif.io/rpc/v1",
-            accounts: [PRIVATE_KEY],
-        }
+      ["PK"],
+    }
   },
   etherscan: {
     apiKey: {

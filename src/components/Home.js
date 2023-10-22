@@ -27,7 +27,7 @@ function Home() {
         <ul>
           <li>Tokenization of products as NFTs on the Ethereum blockchain.</li>
           <li>Deployment on Scroll's Sepolia testnet for lower transaction costs and higher throughput.</li>
-          <li>Deploying on Filecoin Virtual Machine (FVM) facilitates a more secure and decentralized storage solution for the NFT metadata in our project, ensuring enhanced data integrity and accessibility while promoting a transparent and trustworthy supply chain ecosystem.</li>
+          <li>Deploying on Filecoin Virtual Machine (FVM) facilitates a more secure and decentralized storage solution for the NFT metadata in this project, ensuring enhanced data integrity and accessibility while promoting a transparent and trustworthy supply chain ecosystem.</li>
           <li>Utilization of web3.storage for persistent and reliable access to product information.</li>
           <li>QR code scanning for easy product lookups and verifiable product authenticity.</li>
         </ul>
