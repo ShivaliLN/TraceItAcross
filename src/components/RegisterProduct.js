@@ -44,6 +44,8 @@ function RegisterProduct() {
       if (cid) {
         const uri = `https://ipfs.io/ipfs/${cid}/metadata.json`;
         await createProduct(uri);
+        alert('Product batch registered, congratulations it now has a digital identity!');  // Pop-up message
+        clearFormFields();  // Function to clear form fields
       } else {
         console.error('CID is undefined');
       }
@@ -51,6 +53,17 @@ function RegisterProduct() {
       console.error('Error uploading file:', error);
     }
   };
+
+  // Function to clear form fields
+const clearFormFields = () => {
+  formData.name = '';
+  formData.description = '';
+  formData.imageUrl = '';
+  formData.batchNumber = '';
+  formData.productionDate = '';
+  formData.origin = '';
+  // ... clear other attributes
+};
 
   return (
     <div className="register-product-container">

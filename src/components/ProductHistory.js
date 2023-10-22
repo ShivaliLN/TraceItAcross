@@ -15,7 +15,14 @@ function ProductHistory() {
     const handleFetchProductData = async () => {
         if (productId !== '') {
             const productTuple = await getProduct(productId);
-            const metadataUrl = productTuple[0];
+            console.log("productTuple", productTuple);
+            const metadataUrlOriginal = productTuple[0];
+            // Extract the IPFS hash from the metadataUrl
+            const ipfsHash = metadataUrlOriginal.split('/')[4];
+            // Construct a new metadataUrl using the extracted IPFS hash and the new domain structure
+            const metadataUrl = `https://${ipfsHash}.ipfs.w3s.link/metadata.json`;
+            
+            console.log("metadataUrl " + metadataUrl)
             const response = await fetch(metadataUrl);
             const metadata = await response.json();
             setProductData(metadata);
@@ -54,8 +61,12 @@ function ProductHistory() {
                         <p key={index}>{attr.trait_type}: {attr.value}</p>
                     ))}
                     <p>
-                        <img src={`https://ipfs.io/ipfs/${productData.image}`} alt={productData.name} style={{ marginRight: '100px', width: '500px', height: '500px' }}/>
-                    </p>
+                    <img
+    src={`https://${productData.image.split('/')[0]}.ipfs.w3s.link/${productData.image.split('/').pop()}`}
+    alt={productData.name}
+    style={{ marginRight: '100px', width: '500px', height: '500px' }}
+/>
+</p>
                 </div>
             )}
         </div>

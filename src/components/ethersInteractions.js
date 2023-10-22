@@ -5,7 +5,7 @@ const FILECOIN_CALIBRATION_CONTRACT ="0xb0Cd8839E7F6E749D349a5fBe5eAd7FF8711F8d8
 const JSONRPC_SCROLL = "https://sepolia-rpc.scroll.io/";
 const contractJSON = require('./TrackItAcross.json');
 const contractABI = contractJSON.abi;
-const TESTNET_CONTRACT = FILECOIN_CALIBRATION_CONTRACT;
+const TESTNET_CONTRACT = SCROLL_SEPOLIA_CONTRACT;
 
 let provider;
 let contract;
